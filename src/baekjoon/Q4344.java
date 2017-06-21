@@ -23,7 +23,9 @@ public class Q4344 {
             sum /= studentCnt;
             float overAverage = 0;
             for (int j = 0; j < studentCnt; j++) {
-                if (scores[j] > sum) overAverage++;
+                if (scores[j] > sum) {
+                    overAverage++;
+                }
             }
 
             overAverageRatios[i] = overAverage / studentCnt * 100;

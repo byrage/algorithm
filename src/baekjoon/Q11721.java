@@ -12,7 +12,9 @@ public class Q11721 {
 
         for (int i = 1; i <= word.length(); i++) {
             System.out.print(word.charAt(i - 1));
-            if (i % 10 == 0) System.out.println();
+            if (i % 10 == 0) {
+                System.out.println();
+            }
         }
 
         in.close(); /**/

@@ -9,7 +9,7 @@ public class Q2441 {
         int n = in.nextInt();
 
         for (int i = n; i > 0; i--) {
-            for (int j = n-i; j > 0; j--) {
+            for (int j = n - i; j > 0; j--) {
                 System.out.print(" ");
             }
             for (int k = 0; k < i; k++) {

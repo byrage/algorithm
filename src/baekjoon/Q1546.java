@@ -15,7 +15,9 @@ public class Q1546 {
         for (int i = 0; i < cnt; i++) {
             int temp = in.nextInt();
             sum += temp;
-            if (temp > max) max = temp;
+            if (temp > max) {
+                max = temp;
+            }
         }
 
         System.out.printf("%.2f", sum / max * 100 / cnt);

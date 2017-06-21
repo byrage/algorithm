@@ -16,7 +16,9 @@ public class Q4673 {
         }
 
         for (int i = 1; i <= 10000; i++) {
-            if (!isSelfNum[i]) { System.out.println(i); }
+            if (!isSelfNum[i]) {
+                System.out.println(i);
+            }
         }
 
 //        in.close(); /**/

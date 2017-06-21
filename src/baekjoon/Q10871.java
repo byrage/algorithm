@@ -13,7 +13,9 @@ public class Q10871 {
 
         for (int i = 0; i < cnt; i++) {
             int temp = in.nextInt();
-            if (temp < standard) System.out.print(temp + " ");
+            if (temp < standard) {
+                System.out.print(temp + " ");
+            }
         }
 
         in.close(); /**/

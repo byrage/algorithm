@@ -23,12 +23,16 @@ public class Q1065 {
 
     private static boolean isSeries(int num) {
 
-        if (num > 0 && num < 100) return true;
+        if (num > 0 && num < 100) {
+            return true;
+        }
 
         int d = (num % 10) - (num / 10 % 10);
         num /= 10;
         while (num >= 10) {
-            if (d != (num % 10) - (num / 10 % 10)) return false;
+            if (d != (num % 10) - (num / 10 % 10)) {
+                return false;
+            }
             num /= 10;
         }
 
