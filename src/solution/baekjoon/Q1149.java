@@ -12,66 +12,49 @@ RGB거리에 사는 사람들은 집을 빨강, 초록, 파랑중에 하나로 �
 첫째 줄에 모든 집을 칠할 때 드는 비용의 최솟값을 출력한다.
 
 예제 입력  복사
-3
+4
 26 40 83
 49 60 57
 13 89 99
+1 10000 10000
 예제 출력  복사
 96
  */
 
-import java.util.Scanner;
+import java.util.*;
 
 public class Q1149 {
 
     public static void main(String[] args) {
 
+        final int R = 0;
+        final int G = 1;
+        final int B = 2;
+
         Scanner sc = new Scanner(System.in);
         int houseCnt = sc.nextInt();
 
-        if (houseCnt == 0) {
-            System.out.println(0);
-            return;
+        int[][] colors = new int[houseCnt][3];
+        int[][] dp = new int[houseCnt][3];
+
+        for (int i = 0; i < colors.length; i++) {
+            colors[i][R] = sc.nextInt();
+            colors[i][G] = sc.nextInt();
+            colors[i][B] = sc.nextInt();
         }
 
-        int[][] values = new int[houseCnt][3];
-        for (int i = 0; i < values.length; i++) {
-            values[i][0] = sc.nextInt();
-            values[i][1] = sc.nextInt();
-            values[i][2] = sc.nextInt();
+        dp[0][R] = colors[0][R];
+        dp[0][G] = colors[0][G];
+        dp[0][B] = colors[0][B];
+
+        for (int i = 1; i < houseCnt; i++) {
+            dp[i][R] = colors[i][R] + Math.min(dp[i - 1][G], dp[i - 1][B]);
+            dp[i][G] = colors[i][G] + Math.min(dp[i - 1][R], dp[i - 1][B]);
+            dp[i][B] = colors[i][B] + Math.min(dp[i - 1][R], dp[i - 1][G]);
         }
 
-        int minIndex = fetchMinIndex(values[0])+fetchMiddleIndex(values[1]) <
-            fetchMinIndex(values[1])+fetchMiddleIndex(values[1]) ? fetchMinIndex(values[0]) : fetchMiddleIndex(values[0]);
-
-        int[] firstHouses = values[0];
-
-        int totalValue = firstHouses[minIndex];
-        for (int i = 1; i < values.length; i++) {
-            int[] houses = values[i];
-            if (minIndex == 0) {
-                minIndex = houses[1] < houses[2] ? 1 : 2;
-            } else if (minIndex == 1) {
-                minIndex = houses[0] < houses[2] ? 0 : 2;
-            } else if (minIndex == 2) {
-                minIndex = houses[0] < houses[1] ? 0 : 1;
-            }
-
-            System.out.println("i=" + i + ", minIndex=" + minIndex);
-            totalValue += houses[minIndex];
-        }
-
-        System.out.println(totalValue);
-        sc.close();
+        int last = dp.length - 1;
+        int result = Math.min(Math.min(dp[last][R], dp[last][G]), dp[last][B]);
+        System.out.println(result);
     }
-
-    static int fetchMinIndex(int[] arr) {
-        return arr[0] <= arr[1] ? (arr[0] <= arr[2] ? 0 : 2) : (arr[1] < arr[2] ? 1 : 2);
-
-    }
-
-    static int fetchMiddleIndex(int[] arr) {
-        return arr[0] <= arr[1] ? (arr[1] <= arr[2] ? 1 : 2) : (arr[0] < arr[2] ? 0 : 2);
-    }
-
 }
