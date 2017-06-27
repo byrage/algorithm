@@ -25,3 +25,36 @@ input.reverse
 'a'.ord # After 1.9
 ?a # Before 1.9
 ```
+
+## for syntax
+#### 반복
+```ruby
+while 
+until
+```
+
+#### 숫자로 반복
+```ruby
+for num in 1...10
+  puts num
+end
+```
+
+#### 무한 반복
+```ruby
+loop do
+  ...
+  break if
+end
+```
+
+##### 배열 반복
+```ruby
+array.each do
+end
+```
+
+```ruby
+3.times
+time = 3, time.times
+```
