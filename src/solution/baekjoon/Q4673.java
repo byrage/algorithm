@@ -1,6 +1,4 @@
-package baekjoon;
-
-import java.util.*;
+package solution.baekjoon;
 
 public class Q4673 {
 

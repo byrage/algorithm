@@ -1,4 +1,4 @@
-package coderpad;
+package solution.coderpad;
 
 /*
  * Write a function bool isRotation(int[] first, int[] second) that checks

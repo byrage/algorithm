@@ -1,28 +1,23 @@
-package baekjoon;
+package solution.baekjoon;
 
-import java.util.*;
+import java.util.Scanner;
 
-public class Q1546 {
+public class Q10871 {
 
     public static void main(String[] args) {
 
         Scanner in = new Scanner(System.in);
 
         int cnt = in.nextInt();
-        float max = 0;
-        float sum = 0;
+        int standard = in.nextInt();
 
         for (int i = 0; i < cnt; i++) {
             int temp = in.nextInt();
-            sum += temp;
-            if (temp > max) {
-                max = temp;
+            if (temp < standard) {
+                System.out.print(temp + " ");
             }
         }
-
-        System.out.printf("%.2f", sum / max * 100 / cnt);
 
         in.close(); /**/
     }
 }
-

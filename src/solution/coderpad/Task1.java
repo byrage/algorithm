@@ -1,4 +1,4 @@
-package coderpad;
+package solution.coderpad;
 
 /*
  * {3, 1, 4} => 314
