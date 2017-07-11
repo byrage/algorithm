@@ -48,7 +48,7 @@ loop do
 end
 ```
 
-##### 배열 반복
+#### 배열 반복
 ```ruby
 array.each do
 end
@@ -57,4 +57,14 @@ end
 ```ruby
 3.times
 time = 3, time.times
+```
+
+#### 입력을 공백기준으로 나누어 Array로 받기
+``` ruby
+arr = gets.split
+```
+
+#### 입력을 공백 기준으로 나누어 각각 받으면서 Integer 타입으로 변환
+``` ruby
+x, y = gets.split.map(&:to_i)
 ```
