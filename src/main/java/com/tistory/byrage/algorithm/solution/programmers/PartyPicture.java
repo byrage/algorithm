@@ -1,4 +1,4 @@
-package com.tistory.byrage.algorithm.solution.programmers.step1;
+package com.tistory.byrage.algorithm.solution.programmers;
 
 import java.util.HashMap;
 
